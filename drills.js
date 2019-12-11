@@ -1,6 +1,6 @@
 // #1 Implement an Array class from scratch.
 const Mem = require ('./memory');
-const memory = new Mem()
+const memory = new Mem();
 
 class Array {
   constructor() {
@@ -106,6 +106,10 @@ main();
 // _resize() essentially allocates a new chunk of memory, copies the 
 // existing values from the old chunk to the new chunk, and free the old chunk
 
+
+
+// 5. URLify a string
+
 function URLify(string) {
   let result = '';
   for(let x=0; x<string.length; x++){
@@ -113,12 +117,14 @@ function URLify(string) {
       result = result + '%20';
     } 
     else 
-      result = result + string[x]
+      result = result + string[x];
   }
   return result;
 }
   
 // console.log(URLify('tauhida parveen'))
+
+// 6. Filtering an array
 
 function lessThanFive(numbers){
   let result = [];
@@ -131,14 +137,45 @@ function lessThanFive(numbers){
 
 // console.log(lessThanFive([2, 3, 5, 8, 9, 10]))
 
-//   function sumAll(numbers){
-//   numbers.reduce(myFunc)
+// 7. Max sum in the array
 
-//   function myFunc(total, num){
-//     return total + num
-//   }
+function sumAll(numbers){
+  function myFunc(total, num){
+    return total + num;
+  }
+  return numbers.reduce(myFunc);
+}
 
-//     return numbers
-//   }
+// console.log(sumAll([4, 6, -3, 5, -2, 1]));
 
-// console.log(sumAll([4, 6, -3, 5, -2, 1]))
+// 8. Merge arrays
+
+function arrayMerge(arr1, arr2) {
+  let merged = arr1.concat(arr2);
+  return merged.sort(
+    function(a, b) 
+    {
+      return a-b;
+    }
+  );
+}
+
+// console.log(arrayMerge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+
+// 9. Remove characters
+
+function removeCharacters(string, char) {
+  let result = '';
+  for(let x=0; x<char.length; x++){
+    for(let i=0; i<string.length; i++) {
+      if(char[x] !== string[i]) {
+        result = result + string[i];
+      } else {
+        result = result + ' ';
+      }
+    }
+  }
+  return result;
+}
+
+console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
