@@ -1,6 +1,6 @@
 // #1 Implement an Array class from scratch.
-
-const memory = require ('./memory');
+const Mem = require ('./memory');
+const memory = new Mem()
 
 class Array {
   constructor() {
@@ -80,9 +80,62 @@ function main(){
   arr.push(45);
   arr.push(10);
   console.log(arr);
+  // pop items from the array
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  console.log(arr);
 }
 
 main();
 
-// Length = 1, capacity = 3, and memory address = 0.
-// then Length = 6, capacity = 6, and memory address = 1
+// Length = 1, capacity = 2, and memory address = 0.
+// then Length = 6, capacity = 12, and memory address = 5
+// capacity - free space. 
+
+// After pop: 
+// Length = 3, capacity = 12, and the memory address = 5
+// capacity - free space. 
+// capacity is still 12 because the box is still occupied and waiting 
+// for a new push 
+
+// Understanding more about arrays: 
+// _resize() essentially allocates a new chunk of memory, copies the 
+// existing values from the old chunk to the new chunk, and free the old chunk
+
+function URLify(string) {
+let result = ''
+  for(let x=0; x<string.length; x++){
+    if(string[x] == ' '){
+      result = result + '%20'
+    } 
+    else 
+      result = result + string[x]
+  }
+  return result  
+}
+  
+  // console.log(URLify('tauhida parveen'))
+
+  function lessThanFive(numbers){
+  let result = []
+    for (let x=0; x < numbers.length; x++){
+      if(numbers[x] > 5)
+        result.push(numbers[x])
+    }
+    return result
+  }
+
+  // console.log(lessThanFive([2, 3, 5, 8, 9, 10]))
+
+//   function sumAll(numbers){
+//   numbers.reduce(myFunc)
+
+//   function myFunc(total, num){
+//     return total + num
+//   }
+
+//     return numbers
+//   }
+
+// console.log(sumAll([4, 6, -3, 5, -2, 1]))
