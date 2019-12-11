@@ -79,12 +79,12 @@ function main(){
   arr.push(19);
   arr.push(45);
   arr.push(10);
-  console.log(arr);
+  // console.log(arr);
   // pop items from the array
   arr.pop();
   arr.pop();
   arr.pop();
-  console.log(arr);
+  // console.log(arr);
 }
 
 main();
@@ -180,17 +180,28 @@ function removeCharacters(string, char) {
   return result;
 }
 
-console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+// console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
 
 
 // 10. Products
 
 function productSome(numbers){
-  for(let x=0; x<numbers.length + 1, x++) {
-    
+let result = []
+let product = 1;
+  for(let y=0; y<numbers.length; y++) {
+    for(let x=0; x<numbers.length; x++) {
+      console.log([numbers[x],numbers[y]])
+      product = product * [numbers[x]]
+    }
+  result = [...result, [product]]
   }
+  return result
 }
+
+console.log(productSome([1,3,9,4]))
+
+// 11. 2D array
 
 
 // 12. String rotation
@@ -209,5 +220,7 @@ function stringRotation(str1, str2) {
   }
 }
 
-console.log(stringRotation('amazon', 'maazon'));
-console.log(stringRotation('amazon', 'amazon'));
+// console.log(stringRotation('amazon', 'maazon'));
+// console.log(stringRotation('amazon', 'amazon'));
+// console.log(stringRotation('amazon', 'azonam'));
+// console.log(stringRotation('amazon', 'azonma'))
