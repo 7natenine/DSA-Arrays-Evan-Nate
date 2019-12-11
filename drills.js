@@ -166,16 +166,48 @@ function arrayMerge(arr1, arr2) {
 
 function removeCharacters(string, char) {
   let result = '';
-  for(let x=0; x<char.length; x++){
-    for(let i=0; i<string.length; i++) {
-      if(char[x] !== string[i]) {
-        result = result + string[i];
-      } else {
-        result = result + ' ';
+  for(let x=0; x<string.length; x++){
+    let status = false;
+    for(let i=0; i<char.length; i++) {
+      if(string[x] === char[i]) {
+        status = true;
       }
+    }
+    if(!status){
+      result = result + string[x];
     }
   }
   return result;
 }
 
 console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+
+
+// 10. Products
+
+function productSome(numbers){
+  for(let x=0; x<numbers.length + 1, x++) {
+    
+  }
+}
+
+
+// 12. String rotation
+
+function stringRotation(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  } else {
+    for (let i=0; i< str1.length; i++) {
+      let returnedStr = str2[i] + str2.slice(i + 1) + str2.slice(0, i);
+      if (returnedStr === str1) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
+console.log(stringRotation('amazon', 'maazon'));
+console.log(stringRotation('amazon', 'amazon'));
