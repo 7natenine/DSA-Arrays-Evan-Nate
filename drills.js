@@ -191,7 +191,7 @@ let result = []
 let product = 1;
   for(let y=0; y<numbers.length; y++) {
     for(let x=0; x<numbers.length; x++) {
-      console.log([numbers[x],numbers[y]])
+      // console.log([numbers[x],numbers[y]])
       product = product * [numbers[x]]
     }
   result = [...result, [product]]
@@ -199,10 +199,35 @@ let product = 1;
   return result
 }
 
-console.log(productSome([1,3,9,4]))
+// console.log(productSome([1,3,9,4]))
 
 // 11. 2D array
+function searchO(grid){
+let result = []
+let replace = [0,0,0,0,0]
+let final = []
+  for(let i=0; i<grid.length; i++) {
+    for(let j=0; j<grid[i].length; j++) {
+      if(grid[i][j]===0){
+        result = replace
+        console.log('here')
+      }
+      else
+        result = [...result, grid[i][j]]
+    }
+    final = [...final,result]
+  }
+  return final
+}
 
+let test = 
+[[1,0,1,1,0],
+[0,1,1,1,0],
+[1,1,1,1,1],
+[1,0,1,1,1],
+[1,1,1,1,1]];
+
+console.log(searchO(test))
 
 // 12. String rotation
 
