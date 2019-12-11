@@ -99,34 +99,37 @@ main();
 // capacity is still 12 because the box is still occupied and waiting 
 // for a new push 
 
+// When trying to push a string into memory:
+// cannot insert the string into memory, but will still allocate the memory, and returns NaN.
+
 // Understanding more about arrays: 
 // _resize() essentially allocates a new chunk of memory, copies the 
 // existing values from the old chunk to the new chunk, and free the old chunk
 
 function URLify(string) {
-let result = ''
+  let result = '';
   for(let x=0; x<string.length; x++){
     if(string[x] == ' '){
-      result = result + '%20'
+      result = result + '%20';
     } 
     else 
       result = result + string[x]
   }
-  return result  
+  return result;
 }
   
-  // console.log(URLify('tauhida parveen'))
+// console.log(URLify('tauhida parveen'))
 
-  function lessThanFive(numbers){
-  let result = []
-    for (let x=0; x < numbers.length; x++){
-      if(numbers[x] > 5)
-        result.push(numbers[x])
-    }
-    return result
+function lessThanFive(numbers){
+  let result = [];
+  for (let x=0; x < numbers.length; x++){
+    if(numbers[x] > 5)
+      result.push(numbers[x]);
   }
+  return result;
+}
 
-  // console.log(lessThanFive([2, 3, 5, 8, 9, 10]))
+// console.log(lessThanFive([2, 3, 5, 8, 9, 10]))
 
 //   function sumAll(numbers){
 //   numbers.reduce(myFunc)
